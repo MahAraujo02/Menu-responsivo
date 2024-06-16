@@ -1,0 +1,298 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+@media screen and (min-width: 770px) {
+    .header{
+        display: flex;
+        flex-direction: row;
+        height: 4rem;
+        border-bottom: 0.2rem solid #E9ECEF;
+    }
+    .logo-h2{
+        font-size: 1.5rem;
+        color: #364FC7;
+        font-weight:600;
+        margin-left: 5rem;
+        position: fixed;
+    }
+
+    .logo{
+        display: flex;
+        width:15%;
+        align-items: center; /* Center the logo vertically */
+        justify-content: flex-end
+    }
+    .menu-toggle{
+        display: none;
+    }
+    .menu{
+        display: flex;
+        width: 85%;
+        align-items: center;
+
+    }
+    .menu-items{
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        margin-left: 1.625rem;
+    }
+    .menu-item p{
+        text-decoration: none;
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: rgba(134, 142, 150, 1); 
+    }
+    .menu-item p:hover{
+        color:rgba(33, 37, 41, 1);
+        cursor: pointer;
+    }
+    .menu-item{
+        display: flex;
+        align-items: center;
+        padding: 1.125rem;
+    }
+
+    .input-and-icon{
+        border-radius: 0.5rem;
+        display: flex;
+        gap: 5px;
+        height: 2.5rem;
+        align-items: center;
+        width:15rem;
+        background-color:rgba(241, 243, 245, 1);
+    
+    }
+    .input-and-icon input{
+        width: 70%;
+        outline: none;
+        border: transparent;
+        background-color:rgba(241, 243, 245, 1);
+    }
+    .input-and-icon input::placeholder{
+        color:rgba(173, 181, 189, 1);
+
+    }
+    .input-and-icon i{
+        margin: 10px;
+        color:rgba(173, 181, 189, 1);
+        
+    }
+
+    .search-and-profile{
+        display: flex;
+        flex-direction: row;
+        height:100%;
+        align-items: center;
+        width: fit-content;
+        padding-right: 8rem;
+        padding-left: 8rem;
+
+    }
+    .profile{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .img-profile{
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 100%;
+        background-color: rgb(99, 24, 84);
+        border:2px solid rgba(54, 79, 199, 1);
+    }
+    .align{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        justify-content: center;
+    }
+    .align p{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .header{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+    }
+    .logo-h2{
+        font-size: 1.5rem;
+        color: #364FC7;
+        font-weight:600;
+    }
+
+    .logo{
+        height: 4rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 0.2rem solid #E9ECEF;
+        z-index: 5;
+        background-color: #fff;
+    }
+    .logo i{
+        color:rgba(173, 181, 189, 1); 
+
+    }
+    .menu-toggle{
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    .menu{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 4rem);
+        position: fixed;
+        width: 100%;
+        top: 4rem;
+        left: 0;
+        background-color: #fff;
+        z-index: 2;
+        transform: translateY(-120%);
+        transition: cubic-bezier(0.64, 0.02, 0.41, 1.25) .8s;
+    }
+    .menu.show{
+        transform: translateX(0);
+    }
+    .menu-items{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 70%; /* Ajustado para altura */
+        border-bottom: 0.2rem solid #E9ECEF;
+    }
+    .menu-item p{
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: rgba(134, 142, 150, 1);
+        width: 100%;
+
+    }
+    
+    .menu-item:hover{
+        background-color:rgba(248, 249, 250, 1);
+    }
+    .menu-item:hover p{
+        color: rgba(33, 37, 41, 1);
+    }
+    .menu-item{
+        height: 2rem;
+        display: flex;
+        max-width: 100%;
+        align-items: center;
+        flex: 2;
+        padding: 10px;
+        transition: background-color 0.5s;
+        
+    }
+    .input-and-icon{
+        border-radius: 0.5rem;
+        display: flex;
+        gap: 10px;
+        height: 3rem;
+        align-items: center;
+        width: 90%;
+        background-color:rgba(241, 243, 245, 1);
+    }
+    .input-and-icon input{
+        outline: none;
+        border: none;
+        width: 100%;
+        background-color:rgba(241, 243, 245, 1);
+    }
+    .input-and-icon input::placeholder{
+        color:rgba(173, 181, 189, 1);
+    }
+    .input-and-icon i{
+        padding-left: 10px;
+        color:rgba(173, 181, 189, 1); 
+    }
+    .search-and-profile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile{
+        display: flex;
+        width: 90%;
+        border-radius: 0.5rem;
+        align-items: center;
+        gap: 0.8rem;
+        height: 3rem;
+    }
+    .profile p {
+        color: rgba(33, 37, 41, 1);
+        font-size: 1.3rem;
+        font-weight: 500;
+
+    }
+    .img-profile{
+        height: 3rem;
+        width: 3rem;
+        border-radius: 100%;
+        background-color: rgb(196, 255, 221);
+    
+        border: 2px solid #364FC7 ;
+    }
+    .align{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        margin-top: 3.125rem;
+        gap: 30px;
+    }
+}
